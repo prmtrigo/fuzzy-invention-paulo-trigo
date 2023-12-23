@@ -1,0 +1,158 @@
+body {
+    background-color: #1f1f1f;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    text-transform: capitalize;
+}
+
+/* ----- CARD DE INFORMAÇÕES DO POKÉMON -----*/
+
+.pokemon-details-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.pokemon-details {
+    text-align: center;
+    position: relative;
+}
+
+.official-artwork-container {
+    position: relative;
+}
+
+.official-artwork {
+    margin-top: 10em;
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.stats-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 3em;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+p {
+    margin: 6px 0;
+}
+
+.base-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.base-stats .stat {
+    flex: 1 1 150px;
+    margin: 0;
+    padding: 15px;
+    background-color: #444;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.base-stats .stat-bar {
+    width: 80%;
+    height: 12px;
+    background-color: #333;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    margin: 8px auto;
+}
+
+.base-stats .stat-bar span {
+    display: block;
+    height: 100%;
+    border-radius: 8px;
+    background-color: #ffd700;
+    width: 0;
+    animation: fillBar 2s ease-in-out 2 alternate;
+}
+
+.sprites-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.sprite {
+    max-width: 160px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.sprite:hover {
+    transform: scale(1.05);
+    animation: bounce 1s ease infinite;
+}
+
+.sprite.shiny {
+    filter: brightness(1.5);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ----- BOTÃO DE RETORNO -----*/
+
+.back-button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 12px 24px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #444;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #333;
+}
+
+/* ----- PREENCHENDO A BARRA DE ESTATÍSTICAS -----*/
+
+@keyframes fillBar {
+    to{
+        width: 100%;
+    }
+}
